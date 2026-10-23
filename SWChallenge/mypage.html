@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기찾이 - 마이페이지</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Alibaba Sans TC';
+      src: local('Alibaba Sans TC'), local('AlibabaSansTC-Bold');
+      font-weight: 700;
+    }
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    h1, h2, h3, h4, .font-heading, .font-bold, .font-extrabold, .font-black {
+      font-family: 'Alibaba Sans TC', 'Noto Sans KR', sans-serif;
+    }
+    .font-mono-badge { font-family: 'IBM Plex Mono', 'Noto Sans KR', monospace; }
+
+    .interest-tag {
+      background-color: #FFFFFF;
+      border-color: #E2E8F0;
+      color: #475569;
+      transition: all 0.2s ease;
+    }
+    .interest-tag:hover {
+      border-color: #7DD3FC;
+      background-color: #F8FAFC;
+    }
+    .interest-tag.active {
+      background-color: #EBF5FF;
+      border-color: #D8EEFF;
+      color: #2563EB;
+      font-weight: 700;
+    }
+    .interest-tag.active:hover {
+      border-color: #38BDF8 !important;
+      box-shadow: 0 2px 6px rgba(56, 189, 248, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 min-h-screen pb-20">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 px-12 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-10">
+      <a href="index.html" class="inline-flex items-center">
+        <img src="logo.png" alt="기찾이 로고" class="h-7 w-auto object-contain">
+      </a>
+      <nav class="flex space-x-7 text-sm">
+        <a href="index.html" class="font-medium text-slate-600 hover:text-slate-900 transition">홈</a>
+        <a href="ai-search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">AI 기사 찾기</a>
+        <a href="search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">검색</a>
+        <a href="word-learning.html" class="font-medium text-slate-600 hover:text-slate-900 transition">단어 학습</a>
+        <a href="saved-articles.html" class="font-medium text-slate-600 hover:text-slate-900 transition">저장한 기사</a>
+        <a href="mypage.html" class="font-bold text-[#38BDF8]">마이페이지</a>
+      </nav>
+    </div>
+    <a href="login.html" class="bg-[#38BDF8] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-500 transition">로그인</a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto mt-10 px-4 space-y-8">
+    <h2 class="text-3xl font-black text-slate-900">마이페이지</h2>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+      <!-- Left Column -->
+      <div class="space-y-8">
+        
+        <!-- 관심 분야 -->
+        <section class="space-y-3">
+          <h3 class="text-base font-bold text-slate-900">관심 분야</h3>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button onclick="toggleMultiTag(this)" class="interest-tag active border px-3.5 py-1.5 rounded-full font-bold cursor-pointer">IT·개발</button>
+            <button onclick="toggleMultiTag(this)" class="interest-tag border px-3.5 py-1.5 rounded-full font-medium cursor-pointer">의료·보건</button>
+            <button onclick="toggleMultiTag(this)" class="interest-tag border px-3.5 py-1.5 rounded-full font-medium cursor-pointer">교육</button>
+            <button onclick="toggleMultiTag(this)" class="interest-tag border px-3.5 py-1.5 rounded-full font-medium cursor-pointer">경영·경제</button>
+            <button onclick="toggleMultiTag(this)" class="interest-tag border px-3.5 py-1.5 rounded-full font-medium cursor-pointer">디자인·예술</button>
+            <button onclick="toggleMultiTag(this)" class="interest-tag border px-3.5 py-1.5 rounded-full font-medium cursor-pointer">공학·제조</button>
+            <button onclick="toggleMultiTag(this)" class="interest-tag border px-3.5 py-1.5 rounded-full font-medium cursor-pointer">법·행정</button>
+          </div>
+        </section>
+
+        <!-- 회원 정보 -->
+        <section class="space-y-3">
+          <h3 class="text-base font-bold text-slate-900">회원 정보</h3>
+          <div class="border border-slate-200 rounded-xl p-6 bg-white space-y-5 text-xs text-slate-700 shadow-2xs">
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-sky-600 block">이름</span>
+              <p class="font-bold text-slate-900 text-sm">박상현</p>
+            </div>
+            <hr class="border-slate-100">
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-sky-600 block">이메일</span>
+              <p class="text-slate-800">lion@e-mirim.hs.kr</p>
+            </div>
+            <hr class="border-slate-100">
+            <div class="space-y-3">
+              <span class="text-[11px] font-bold text-sky-600 block">로그인 방식</span>
+              <p class="text-slate-800">Google (시연)</p>
+              <button onclick="location.href='login.html'" class="border border-slate-200 text-slate-700 px-4 py-1.5 rounded-lg text-xs hover:bg-slate-50 transition">로그아웃</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 주간 학습 기록 -->
+        <section class="space-y-3">
+          <h3 class="text-base font-bold text-slate-900">주간 학습 기록</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="border border-slate-200 rounded-xl p-5 bg-white space-y-2 shadow-2xs">
+              <span class="text-[11px] font-bold text-sky-600 block">읽은 기사</span>
+              <div class="flex items-baseline space-x-1">
+                <span class="text-xl font-bold text-slate-900">12</span>
+                <span class="text-xs text-slate-500">개</span>
+              </div>
+              <p class="text-[11px] text-slate-400">지난주 대비 +3개</p>
+            </div>
+            <div class="border border-slate-200 rounded-xl p-5 bg-white space-y-2 shadow-2xs">
+              <span class="text-[11px] font-bold text-sky-600 block">학습한 단어</span>
+              <div class="flex items-baseline space-x-1">
+                <span class="text-xl font-bold text-slate-900">38</span>
+                <span class="text-xs text-slate-500">개</span>
+              </div>
+              <p class="text-[11px] text-slate-400">이번 주 새로 학습한 단어</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="space-y-8">
+        
+        <!-- 최근 본 기사 -->
+        <section class="space-y-3">
+          <h3 class="text-base font-bold text-slate-900">최근 본 기사</h3>
+          <div class="border border-slate-200 rounded-xl p-5 bg-white space-y-4 divide-y divide-slate-100 shadow-2xs">
+            <div onclick="location.href='saved-articles-detail.html'" class="cursor-pointer space-y-1 hover:text-sky-600 transition">
+              <p class="font-bold text-xs text-slate-800">기준금리 동결 이어져, 가계 대출 이자 부담은 여전</p>
+              <p class="text-[11px] text-slate-400">뉴시스 · 2026.10.19</p>
+            </div>
+            <div onclick="location.href='saved-articles-detail.html'" class="pt-3 cursor-pointer space-y-1 hover:text-sky-600 transition">
+              <p class="font-bold text-xs text-slate-800">생성형 AI 활용 개발자 채용 늘어, 기초 코딩 역량 여전히 중요</p>
+              <p class="text-[11px] text-slate-400">뉴스1 · 2026.10.19</p>
+            </div>
+            <div onclick="location.href='saved-articles-detail.html'" class="pt-3 cursor-pointer space-y-1 hover:text-sky-600 transition">
+              <p class="font-bold text-xs text-slate-800">딥페이크 범죄 처벌 강화, 청소년 피해 예방 교육 확대</p>
+              <p class="text-[11px] text-slate-400">연합뉴스 · 2026.10.14</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 학습한 단어 -->
+        <section class="space-y-3">
+          <div class="flex justify-between items-center">
+            <h3 class="text-base font-bold text-slate-900">학습한 단어</h3>
+            <span class="text-xs text-slate-400">3개</span>
+          </div>
+          <div class="flex space-x-2 text-xs">
+            <span onclick="location.href='word-learning.html'" class="border border-slate-200 bg-slate-50 px-3.5 py-1.5 rounded-full text-slate-700 cursor-pointer hover:bg-slate-100 transition">기준금리</span>
+            <span onclick="location.href='word-learning.html'" class="border border-slate-200 bg-slate-50 px-3.5 py-1.5 rounded-full text-slate-700 cursor-pointer hover:bg-slate-100 transition">생성형 AI</span>
+            <span onclick="location.href='word-learning.html'" class="border border-slate-200 bg-slate-50 px-3.5 py-1.5 rounded-full text-slate-700 cursor-pointer hover:bg-slate-100 transition">딥페이크</span>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- 하단 그래프 영역 -->
+    <section class="border border-slate-200 rounded-2xl p-8 bg-white shadow-2xs mt-8">
+      <div class="h-40 flex items-end justify-between px-10">
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-12"></div>
+          <span class="text-xs text-slate-500 font-medium">월</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-28"></div>
+          <span class="text-xs text-slate-500 font-medium">화</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-20"></div>
+          <span class="text-xs text-slate-500 font-medium">수</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-6"></div>
+          <span class="text-xs text-slate-500 font-medium">목</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-14"></div>
+          <span class="text-xs text-slate-500 font-medium">금</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-16"></div>
+          <span class="text-xs text-slate-500 font-medium">토</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-16 bg-[#D8EEFF] rounded-lg h-10"></div>
+          <span class="text-xs text-slate-500 font-medium">일</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleMultiTag(element) {
+      if (element.classList.contains('active')) {
+        element.classList.remove('active');
+        element.classList.remove('font-bold');
+        element.classList.add('font-medium');
+      } else {
+        element.classList.add('active');
+        element.classList.remove('font-medium');
+        element.classList.add('font-bold');
+      }
+    }
+  </script>
+</body>
+</html>

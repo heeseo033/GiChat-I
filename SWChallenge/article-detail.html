@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기찾이 - 기사 상세</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Alibaba Sans TC';
+      src: local('Alibaba Sans TC'), local('AlibabaSansTC-Bold');
+      font-weight: 700;
+    }
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    h1, h2, h3, h4, .font-heading, .font-bold, .font-extrabold, .font-black {
+      font-family: 'Alibaba Sans TC', 'Noto Sans KR', sans-serif;
+    }
+    .font-mono-badge { font-family: 'IBM Plex Mono', 'Noto Sans KR', monospace; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 min-h-screen pb-20">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 px-12 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-10">
+      <a href="index.html" class="inline-flex items-center">
+        <img src="logo.png" alt="기찾이 로고" class="h-7 w-auto object-contain">
+      </a>
+      <nav class="flex space-x-7 text-sm">
+        <a href="index.html" class="font-medium text-slate-600 hover:text-slate-900 transition">홈</a>
+        <a href="ai-search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">AI 기사 찾기</a>
+        <a href="search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">검색</a>
+        <a href="word-learning.html" class="font-medium text-slate-600 hover:text-slate-900 transition">단어 학습</a>
+        <a href="saved-articles.html" class="font-medium text-slate-600 hover:text-slate-900 transition">저장한 기사</a>
+        <a href="mypage.html" class="font-medium text-slate-600 hover:text-slate-900 transition">마이페이지</a>
+      </nav>
+    </div>
+    <a href="login.html" class="bg-[#38BDF8] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-500 transition">로그인</a>
+  </header>
+
+  <main class="max-w-5xl mx-auto mt-10 px-4 space-y-8">
+    <button onclick="history.back()" class="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1 font-medium">
+      ← 목록으로
+    </button>
+
+    <div class="space-y-3">
+      <div class="flex items-center space-x-2 text-xs">
+        <span class="text-slate-700 font-bold">경제</span>
+        <span class="bg-sky-100 text-sky-600 px-2 py-0.5 rounded text-[11px] font-semibold">검증 통과 93</span>
+        <span class="text-slate-400 text-[11px]">난이도 어려움</span>
+      </div>
+      <h2 class="text-3xl font-black text-slate-900 leading-snug">기준금리 동결 이어져,<br>가계 대출 이자 부담은 여전</h2>
+      <div class="flex items-center space-x-3 text-xs text-slate-400">
+        <span>출처 뉴시스 · 2026.10.19</span>
+        <button onclick="toggleDetailSave(this);" class="border border-slate-200 text-slate-700 px-2.5 py-1 rounded text-[11px] hover:bg-slate-50 transition">기사 저장</button>
+      </div>
+    </div>
+
+    <!-- AI 요약 Section -->
+    <section class="space-y-2">
+      <h3 class="text-base font-bold text-slate-900">AI 요약</h3>
+      <div class="border border-sky-200 bg-[#F0F8FF] rounded-xl p-5 text-xs text-slate-700 leading-relaxed space-y-1.5">
+        <p>• 한국은행이 기준금리를 그대로 유지했다.</p>
+        <p>• 금리가 같아도 대출 이자는 쉽게 줄지 않는다.</p>
+        <p>• 금리는 물가, 환율, 취업 시장과 모두 연결된다.</p>
+      </div>
+    </section>
+
+    <!-- 기사 원문 Section -->
+    <section class="space-y-2">
+      <h3 class="text-base font-bold text-slate-900">기사 원문</h3>
+      <div class="border border-sky-200 bg-[#F0F8FF] rounded-xl p-6 text-xs text-slate-700 leading-relaxed space-y-2">
+        <p>기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요.</p>
+        <p>기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요.</p>
+        <p>기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요.</p>
+        <p>기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요. 기사 내용을 입력하세요.</p>
+      </div>
+    </section>
+
+    <!-- 핵심 내용 Section -->
+    <section class="space-y-2">
+      <h3 class="text-base font-bold text-slate-900">핵심 내용</h3>
+      <div class="text-xs text-slate-700 space-y-1.5 leading-relaxed">
+        <p>• <span class="font-bold">무슨 일인가</span> 한국은행이 기준금리를 그대로 유지했다.</p>
+        <p>• <span class="font-bold">왜 중요한가</span> 금리가 같아도 대출 이자는 쉽게 줄지 않는다.</p>
+        <p>• <span class="font-bold">알아 둘 점</span> 금리는 물가, 환율, 취업 시장과 모두 연결된다.</p>
+      </div>
+    </section>
+
+    <!-- 원문 & 밑줄 단어 Section -->
+    <section class="space-y-2">
+      <div class="flex justify-between items-center">
+        <h3 class="text-base font-bold text-slate-900">원문</h3>
+        <span class="text-[11px] text-slate-400">예시 본문 · 밑줄 친 단어를 눌러 뜻 보기</span>
+      </div>
+      <div class="border border-slate-200 bg-white rounded-xl p-6 text-xs text-slate-700 leading-relaxed space-y-3 shadow-2xs">
+        <p>한국은행은 기준금리를 동결했다. 인플레이션 우려가 남아 있어 인하 시점을 신중히 보겠다는 입장이다. <a href="#word-section" class="text-sky-600 underline font-bold">환율</a> 변동도 부담이어서 가계의 이자 부담이 쉽게 줄지 않을 전망이다.</p>
+        <a href="https://www.newsis.com" target="_blank" class="inline-block text-[11px] text-slate-400 underline hover:text-slate-700">뉴시스에서 원문 읽기</a>
+      </div>
+    </section>
+
+    <!-- 단어 검색 Section -->
+    <section id="word-section" class="space-y-3 pt-4">
+      <h3 class="text-base font-bold text-slate-900">단어 검색</h3>
+      <div class="flex gap-3">
+        <input type="text" value="환율" class="flex-1 border border-slate-200 rounded-xl px-4 py-3 text-xs outline-none bg-white focus:border-sky-400">
+        <button class="bg-[#38BDF8] text-white px-6 py-3 rounded-xl text-xs font-semibold hover:bg-sky-500 transition">검색</button>
+      </div>
+      
+      <div class="flex items-center space-x-2 text-xs">
+        <span class="text-slate-400 text-[11px]">이 기사의 단어</span>
+        <button class="border border-slate-200 bg-white text-slate-700 px-3 py-1 rounded-md text-[11px] hover:bg-slate-50">기준금리</button>
+        <button class="border border-slate-200 bg-white text-slate-700 px-3 py-1 rounded-md text-[11px] hover:bg-slate-5

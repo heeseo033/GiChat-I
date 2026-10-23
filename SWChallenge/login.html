@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기찾이 - 로그인</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Alibaba Sans TC';
+      src: local('Alibaba Sans TC'), local('AlibabaSansTC-Bold');
+      font-weight: 700;
+    }
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    h1, h2, h3, h4, .font-heading, .font-bold, .font-extrabold, .font-black {
+      font-family: 'Alibaba Sans TC', 'Noto Sans KR', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 min-h-screen pb-20">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 px-12 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-10">
+      <a href="index.html" class="inline-flex items-center">
+        <img src="logo.png" alt="기찾이 로고" class="h-7 w-auto object-contain">
+      </a>
+      <nav class="flex space-x-7 text-sm">
+        <a href="index.html" class="font-medium text-slate-600 hover:text-slate-900 transition">홈</a>
+        <a href="ai-search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">AI 기사 찾기</a>
+        <a href="search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">검색</a>
+        <a href="word-learning.html" class="font-medium text-slate-600 hover:text-slate-900 transition">단어 학습</a>
+        <a href="saved-articles.html" class="font-medium text-slate-600 hover:text-slate-900 transition">저장한 기사</a>
+        <a href="mypage.html" class="font-medium text-slate-600 hover:text-slate-900 transition">마이페이지</a>
+      </nav>
+    </div>
+    <a href="login.html" class="bg-[#38BDF8] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-500 transition">로그인</a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-md mx-auto mt-16 px-4">
+    <h2 class="text-3xl font-black text-slate-900 text-center mb-10">만나서 반가워요</h2>
+
+    <!-- Tabs -->
+    <div class="flex border-b border-slate-200 mb-8 text-center text-sm font-bold">
+      <a href="login.html" class="w-1/2 py-3 text-slate-900 border-b-2 border-[#38BDF8]">로그인</a>
+      <a href="signup.html" class="w-1/2 py-3 text-slate-400 hover:text-slate-900 transition">회원가입</a>
+    </div>
+
+    <!-- Login Form -->
+    <form class="space-y-5" onsubmit="event.preventDefault(); location.href='mypage.html';">
+      <div>
+        <label class="block text-[11px] font-bold text-slate-800 mb-1.5 tracking-wider">ID</label>
+        <input type="text" placeholder="아이디를 입력하세요." class="w-full border border-sky-200 rounded-lg px-4 py-3 text-xs outline-none focus:border-sky-400 placeholder:text-slate-400 bg-white">
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold text-slate-800 mb-1.5 tracking-wider">PASSWORD</label>
+        <input type="password" placeholder="비밀번호를 입력하세요." class="w-full border border-sky-200 rounded-lg px-4 py-3 text-xs outline-none focus:border-sky-400 placeholder:text-slate-400 bg-white">
+      </div>
+
+      <div class="flex justify-center space-x-3 pt-4">
+        <button type="submit" class="bg-[#38BDF8] text-white px-8 py-2.5 rounded-lg text-xs font-semibold hover:bg-sky-500 transition">로그인</button>
+        <button type="button" onclick="location.href='index.html'" class="border border-slate-200 text-slate-700 px-8 py-2.5 rounded-lg text-xs font-semibold hover:bg-slate-50 transition">취소</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

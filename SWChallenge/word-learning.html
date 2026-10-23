@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기찾이 - 단어 학습</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Alibaba Sans TC';
+      src: local('Alibaba Sans TC'), local('AlibabaSansTC-Bold');
+      font-weight: 700;
+    }
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    h1, h2, h3, h4, .font-heading, .font-bold, .font-extrabold, .font-black {
+      font-family: 'Alibaba Sans TC', 'Noto Sans KR', sans-serif;
+    }
+    .font-mono-badge { font-family: 'IBM Plex Mono', 'Noto Sans KR', monospace; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 min-h-screen pb-20">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 px-12 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-10">
+      <a href="index.html" class="inline-flex items-center">
+        <img src="logo.png" alt="기찾이 로고" class="h-7 w-auto object-contain">
+      </a>
+      <nav class="flex space-x-7 text-sm">
+        <a href="index.html" class="font-medium text-slate-600 hover:text-slate-900 transition">홈</a>
+        <a href="ai-search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">AI 기사 찾기</a>
+        <a href="search.html" class="font-medium text-slate-600 hover:text-slate-900 transition">검색</a>
+        <a href="word-learning.html" class="font-bold text-[#38BDF8]">단어 학습</a>
+        <a href="saved-articles.html" class="font-medium text-slate-600 hover:text-slate-900 transition">저장한 기사</a>
+        <a href="mypage.html" class="font-medium text-slate-600 hover:text-slate-900 transition">마이페이지</a>
+      </nav>
+    </div>
+    <a href="login.html" class="bg-[#38BDF8] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-500 transition">로그인</a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto mt-10 px-4 space-y-6">
+    <div>
+      <h2 class="text-3xl font-black text-slate-900 mb-1">단어 학습</h2>
+      <p class="text-xs text-slate-400">뉴스에 나오는 어려운 말을 뜻, 예문, 관련 단어로 익혀요.</p>
+    </div>
+
+    <!-- Layout Container -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+      
+      <!-- Left Sidebar: Word List -->
+      <div class="border border-slate-200 rounded-xl overflow-hidden bg-white text-xs text-slate-700 divide-y divide-slate-100 shadow-2xs">
+        <div class="p-3 font-bold bg-[#EBF5FF] text-sky-600 flex justify-between items-center border-b border-slate-200">
+          <span>기준금리</span>
+          <span class="text-sky-500 text-xs">★</span>
+        </div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">동결</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">인플레이션</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">환율</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">생성형 AI</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">알고리즘</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">고교학점제</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">딥페이크</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">웨어러블</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">임상 시험</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">저작권</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">보조금</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer pt-4 border-t border-slate-200">반도체</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">예산안</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">증액</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">키오스크</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">시범 운영</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">취업률</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">현장 실습</div>
+        <div class="p-3 hover:bg-slate-50 cursor-pointer">선입금</div>
+      </div>
+
+      <!-- Right Area: Word Detail Cards -->
+      <div class="md:col-span-3 space-y-6">
+        <div class="border border-slate-200 rounded-xl p-6 bg-white space-y-5 shadow-2xs">
+          <div class="flex justify-between items-start">
+            <h3 class="text-2xl font-black text-slate-900">기준금리</h3>
+            <button onclick="toggleWordSave(this)" class="bg-[#38BDF8] text-white px-4 py-1.5 rounded-lg text-xs font-semibold hover:bg-sky-500 transition">저장됨</button>
+          </div>
+
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold text-sky-600 block">단어 뜻</span>
+            <p class="text-xs text-slate-700 leading-relaxed">중앙은행이 정하는 가장 기본이 되는 금리. 은행의 대출·예금 금리에 영향을 준다.</p>
+          </div>
+
+          <hr class="border-slate-100">
+
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold text-sky-600 block">예문</span>
+            <p class="text-xs text-slate-700 leading-relaxed">기준금리가 오르면 대출 이자 부담도 커진다.</p>
+          </div>
+
+          <hr class="border-slate-100">
+
+          <div class="space-y-2">
+            <span class="text-[11px] font-bold text-sky-600 block">관련 단어</span>
+            <div class="flex space-x-2">
+              <span class="border border-slate-200 bg-slate-50 px-3 py-1 rounded-md text-xs text-slate-700">동결</span>
+              <span class="border border-slate-200 bg-slate-50 px-3 py-1 rounded-md text-xs text-slate-700">인플레이션</span>
+              <span class="border border-slate-200 bg-slate-50 px-3 py-1 rounded-md text-xs text-slate-700">환율</span>
+            </div>
+          </div>
+
+          <div class="space-y-1 pt-2">
+            <span class="text-[11px] font-bold text-sky-600 block">이 단어가 나온 기사</span>
+            <a href="article-detail.html" class="text-xs font-bold text-slate-800 hover:text-sky-600 underline underline-offset-2">기준금리 동결 이어져, 가계 대출 이자 부담은 여전</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function toggleWordSave(btn) {
+      if (btn.classList.contains('bg-[#38BDF8]')) {
+        btn.classList.remove('bg-[#38BDF8]', 'text-white', 'hover:bg-sky-500');
+        btn.classList.add('border', 'border-slate-200', 'text-slate-700', 'hover:bg-slate-50');
+        btn.textContent = '저장';
+      } else {
+        btn.classList.add('bg-[#38BDF8]', 'text-white', 'hover:bg-sky-500');
+        btn.classList.remove('border', 'border-slate-200', 'text-slate-700', 'hover:bg-slate-50');
+        btn.textContent = '저장됨';
+      }
+    }
+  </script>
+</body>
+</html>
