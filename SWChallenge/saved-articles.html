@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기찾이 - 저장한 기사</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Alibaba Sans TC';
+      src: local('Alibaba Sans TC'), local('AlibabaSansTC-Bold');
+      font-weight: 700;
+    }
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    h1, h2, h3, h4, .font-heading, .font-bold, .font-extrabold, .font-black {
+      font-family: 'Alibaba Sans TC', 'Noto Sans KR', sans-serif;
+    }
+    .font-mono-badge { font-family: 'IBM Plex Mono', 'Noto Sans KR', monospace; }
+
+    .article-card {
+      border-color: #E2E8F0;
+      transition: all 0.2s ease;
+    }
+    .article-card:hover {
+      border-color: #7DD3FC;
+    }
+    .article-card:hover .card-title {
+      color: #0284C7;
+    }
+
+    .article-card:has(button:hover) {
+      border-color: #E2E8F0 !important;
+    }
+    .article-card:has(button:hover) .card-title {
+      color: #0F172A !important;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 min-h-screen pb-20">
+
+  <!-- Header -->
+  <header class="bg-[#D8EEFF] px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-8">
+      <a href="index.html" class="text-2xl font-black text-slate-900 tracking-tight">기찾이</a>
+      <nav class="flex space-x-6 text-sm font-medium text-slate-700">
+        <a href="index.html" class="hover:text-slate-900">홈</a>
+        <a href="ai-search.html" class="hover:text-slate-900">AI 기사 찾기</a>
+        <a href="search.html" class="hover:text-slate-900">검색</a>
+        <a href="word-learning.html" class="hover:text-slate-900">단어 학습</a>
+        <a href="saved-articles.html" class="font-bold text-slate-900 border-b-2 border-slate-900 pb-0.5">저장한 기사</a>
+        <a href="mypage.html" class="hover:text-slate-900">마이페이지</a>
+      </nav>
+    </div>
+    <a href="login.html" class="bg-[#A0D7FF] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-400 transition">로그인</a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto mt-10 px-4 space-y-12">
+
+    <h2 class="text-3xl font-black text-slate-900">저장한 기사</h2>
+
+    <!-- 저장 기사 Section -->
+    <section>
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold text-slate-900">저장 기사</h3>
+        <span class="text-xs text-slate-400 font-medium">3건</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="article-card border bg-white rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+          <div onclick="location.href='article-detail.html'" class="p-5 pb-0 cursor-pointer flex-1">
+            <div class="flex items-center space-x-2 text-xs mb-3">
+              <span class="text-sky-600 font-semibold">교육·진로</span>
+              <span class="bg-sky-50 text-sky-500 border border-sky-100 px-2 py-0.5 rounded-md font-mono-badge font-medium">검증 통과 97</span>
+            </div>
+            <h4 class="card-title font-bold text-base text-slate-900 mb-2 leading-snug transition-colors">고교학점제 선택 과목,<br>진로별 이수 가이드 공개</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">교육 당국이 진로별로 추천 과목 조합을 정리했다.</p>
+          </div>
+          <div class="flex justify-between items-center p-5 pt-3 border-t border-slate-50">
+            <span class="text-xs text-slate-400">연합뉴스 · 2026.10.18</span>
+            <button onclick="alert('저장이 취소되었습니다.');" class="bg-[#D8EEFF] text-[#2563EB] px-3.5 py-1 rounded-md text-xs font-medium hover:bg-[#C2E2FF] transition">저장 취소</button>
+          </div>
+        </div>
+
+        <div class="article-card border bg-white rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+          <div onclick="location.href='article-detail.html'" class="p-5 pb-0 cursor-pointer flex-1">
+            <div class="flex items-center space-x-2 text-xs mb-3">
+              <span class="text-sky-600 font-semibold">교육·진로</span>
+              <span class="bg-sky-50 text-sky-500 border border-sky-100 px-2 py-0.5 rounded-md font-mono-badge font-medium">검증 통과 97</span>
+            </div>
+            <h4 class="card-title font-bold text-base text-slate-900 mb-2 leading-snug transition-colors">고교학점제 선택 과목,<br>진로별 이수 가이드 공개</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">교육 당국이 진로별로 추천 과목 조합을 정리했다.</p>
+          </div>
+          <div class="flex justify-between items-center p-5 pt-3 border-t border-slate-50">
+            <span class="text-xs text-slate-400">연합뉴스 · 2026.10.18</span>
+            <button onclick="alert('저장이 취소되었습니다.');" class="bg-[#D8EEFF] text-[#2563EB] px-3.5 py-1 rounded-md text-xs font-medium hover:bg-[#C2E2FF] transition">저장 취소</button>
+          </div>
+        </div>
+
+        <div class="article-card border bg-white rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+          <div onclick="location.href='article-detail.html'" class="p-5 pb-0 cursor-pointer flex-1">
+            <div class="flex items-center space-x-2 text-xs mb-3">
+              <span class="text-sky-600 font-semibold">교육·진로</span>
+              <span class="bg-sky-50 text-sky-500 border border-sky-100 px-2 py-0.5 rounded-md font-mono-badge font-medium">검증 통과 97</span>
+            </div>
+            <h4 class="card-title font-bold text-base text-slate-900 mb-2 leading-snug transition-colors">고교학점제 선택 과목,<br>진로별 이수 가이드 공개</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">교육 당국이 진로별로 추천 과목 조합을 정리했다.</p>
+          </div>
+          <div class="flex justify-between items-center p-5 pt-3 border-t border-slate-50">
+            <span class="text-xs text-slate-400">연합뉴스 · 2026.10.18</span>
+            <button onclick="alert('저장이 취소되었습니다.');" class="bg-[#D8EEFF] text-[#2563EB] px-3.5 py-1 rounded-md text-xs font-medium hover:bg-[#C2E2FF] transition">저장 취소</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 관심 주제 Section -->
+    <section>
+      <h3 class="text-lg font-bold text-slate-900 mb-2">관심 주제</h3>
+      
+      <div class="flex space-x-2 mb-2">
+        <button class="bg-[#EBF5FF] text-[#3B82F6] border border-[#D8EEFF] px-3.5 py-1.5 rounded-full text-xs font-bold">경제 1</button>
+        <button class="bg-[#EBF5FF] text-[#3B82F6] border border-[#D8EEFF] px-3.5 py-1.5 rounded-full text-xs font-bold">과학·IT 1</button>
+        <button class="bg-[#EBF5FF] text-[#3B82F6] border border-[#D8EEFF] px-3.5 py-1.5 rounded-full text-xs font-bold">교육·진로 1</button>
+      </div>
+      <p class="text-xs text-slate-400 mb-6">저장한 기사에서 모은 주제예요. 누르면 해당 분야 기사를 볼 수 있어요.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="article-card border bg-white rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+          <div onclick="location.href='article-detail.html'" class="p-5 pb-0 cursor-pointer flex-1">
+            <div class="flex items-center space-x-2 text-xs mb-3">
+              <span class="text-sky-600 font-semibold">교육·진로</span>
+              <span class="bg-sky-50 text-sky-500 border border-sky-100 px-2 py-0.5 rounded-md font-mono-badge font-medium">검증 통과 97</span>
+            </div>
+            <h4 class="card-title font-bold text-base text-slate-900 mb-2 leading-snug transition-colors">고교학점제 선택 과목,<br>진로별 이수 가이드 공개</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">교육 당국이 진로별로 추천 과목 조합을 정리했다.</p>
+          </div>
+          <div class="flex justify-between items-center p-5 pt-3 border-t border-slate-50">
+            <span class="text-xs text-slate-400">연합뉴스 · 2026.10.18</span>
+            <button onclick="alert('저장이 취소되었습니다.');" class="bg-[#D8EEFF] text-[#2563EB] px-3.5 py-1 rounded-md text-xs font-medium hover:bg-[#C2E2FF] transition">저장 취소</button>
+          </div>
+        </div>
+
+        <div class="article-card border bg-white rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+          <div onclick="location.href='article-detail.html'" class="p-5 pb-0 cursor-pointer flex-1">
+            <div class="flex items-center space-x-2 text-xs mb-3">
+              <span class="text-sky-600 font-semibold">교육·진로</span>
+              <span class="bg-sky-50 text-sky-500 border border-sky-100 px-2 py-0.5 rounded-md font-mono-badge font-medium">검증 통과 97</span>
+            </div>
+            <h4 class="card-title font-bold text-base text-slate-900 mb-2 leading-snug transition-colors">고교학점제 선택 과목,<br>진로별 이수 가이드 공개</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">교육 당국이 진로별로 추천 과목 조합을 정리했다.</p>
+          </div>
+          <div class="flex justify-between items-center p-5 pt-3 border-t border-slate-50">
+            <span class="text-xs text-slate-400">연합뉴스 · 2026.10.18</span>
+            <button onclick="alert('저장이 취소되었습니다.');" class="bg-[#D8EEFF] text-[#2563EB] px-3.5 py-1 rounded-md text-xs font-medium hover:bg-[#C2E2FF] transition">저장 취소</button>
+          </div>
+        </div>
+
+        <div class="article-card border bg-white rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+          <div onclick="location.href='article-detail.html'" class="p-5 pb-0 cursor-pointer flex-1">
+            <div class="flex items-center space-x-2 text-xs mb-3">
+              <span class="text-sky-600 font-semibold">교육·진로</span>
+              <span class="bg-sky-50 text-sky-500 border border-sky-100 px-2 py-0.5 rounded-md font-mono-badge font-medium">검증 통과 97</span>
+            </div>
+            <h4 class="card-title font-bold text-base text-slate-900 mb-2 leading-snug transition-colors">고교학점제 선택 과목,<br>진로별 이수 가이드 공개</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">교육 당국이 진로별로 추천 과목 조합을 정리했다.</p>
+          </div>
+          <div class="flex justify-between items-center p-5 pt-3 border-t border-slate-50">
+            <span class="text-xs text-slate-400">연합뉴스 · 2026.10.18</span>
+            <button onclick="alert('저장이 취소되었습니다.');" class="bg-[#D8EEFF] text-[#2563EB] px-3.5 py-1 rounded-md text-xs font-medium hover:bg-[#C2E2FF] transition">저장 취소</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
